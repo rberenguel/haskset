@@ -28,11 +28,11 @@ This will generate a `presentation.html` via Pandoc. You need a webserver to ser
 
 ## Notes and TODOs
 
-- [x] Image sizing should be more friendly to mobile/other sizes
 - [ ] The CSS is not customizable yet
 - [ ] You can't pass options to Pandoc
 - [ ] Several features of Deckset are not implemented (some may never be)
 - [ ] There is no useful debug information via flags
 - [ ] Add more test cases and edge test cases
+- [x] Adapt CSS for mobile (or try for a while)
 
 On the flip side, it works for simple presentations (may need some minor tweaking of the Markdown). You can see a freshly generated example [here](https://rberenguel.github.io/commoditisation-languages/commoditisation.html#/).
