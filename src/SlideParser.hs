@@ -6,6 +6,7 @@ import Control.Monad (guard)
 import Control.Monad.Identity (Identity)
 import Data.Char (digitToInt)
 import Data.Text (pack, splitOn, strip, unpack)
+import qualified Debug.Trace as Debug
 import qualified Data.Text as T
 import qualified Text.Parsec as Parsec
 
@@ -177,12 +178,15 @@ oneOfSlide = do
             spaceTryParser
           ]
 
+debug = flip Debug.trace
+
 slideParser :: Parsec.ParsecT String () Identity Slide
 slideParser = do
   Parsec.spaces
   Slide <$> Parsec.manyTill oneOfSlide Parsec.eof
 
 textToSlides :: T.Text -> [Either Parsec.ParseError Slide]
-textToSlides text = map (Parsec.parse slideParser "" . unpack) splat
+textToSlides text = map parser splat
   where
-    splat = splitOn "---" text
+    splat = splitOn "\n---\n" text
+    parser txt = (Parsec.parse slideParser "" . unpack) txt `debug` unpack txt

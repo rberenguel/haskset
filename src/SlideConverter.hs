@@ -125,7 +125,11 @@ wrapInDirectives _ existing = existing
 -- Incremental blocks
 
 format :: [Directive] -> Object -> T.Text
-format _ (Header level text) = T.concat [level <> "#", " ", reformatFootnote (reformatInlinedEmph text)]
+format _ (Header level text) = 
+  T.concat [level <> "#", 
+            " ", 
+            reformatFootnote 
+            (reformatInlinedEmph text)]
 format _ Blank = "\n"
 format _ (Text text) = reformatFootnote text
 format setup (List items) = case setup of

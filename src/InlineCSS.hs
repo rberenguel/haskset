@@ -17,6 +17,15 @@ baseCSS =
     font-weight: bold;
     src: url("resources/OstrichSans-Heavy.otf") format("opentype");
 }
+@font-face {
+    font-family: Monoid;
+    src: url("resources/monoid-bold.woff") format("woff");
+}
+@font-face {
+    font-family: Monoid;
+    font-weight: bold;
+    src: url("resources/monoid-bold.woff") format("woff");;
+}
 section.has-light-background, section.has-light-background h1, section.has-light-background h2, section.has-light-background h3, section.has-light-background h4, section.has-light-background h5, section.has-light-background h6 {
     color:  rgb(13, 42, 53);}
 
@@ -41,6 +50,32 @@ section.has-light-background, section.has-light-background h1, section.has-light
     font-style: normal;
 }
 
+pre.sourceCode {
+    width: 100%;
+}
+
+code span.st {
+    color: #268bd2;
+    font-family: "Monoid", monospace !important;
+    font-size: 0.9rem;
+}
+
+code span.kw {
+    color: #007020;
+    font-weight: bold;
+    font-family: "Monoid", monospace !important;
+}
+
+code.sourceCode > span {
+    font-family: "Monoid", monospace !important;
+    font-size: 0.9rem;
+}
+
+code span.im {
+    color: #cb4b16;
+    font-family: "Monoid", monospace !important;
+    font-size: 0.9rem;
+}
 
 .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
     text-transform: uppercase;
@@ -86,7 +121,7 @@ ul > li:before {
     display: table;
     width: 50%;
     float: left;
-    height: 700px;
+    height: 95%;
 }
 
 .overlay {
@@ -95,7 +130,7 @@ ul > li:before {
 }
 
 .background-multi-image {
-    height: 700px;
+    height: 95%;
     display: inline-block;
     background-position: calc(50%);
     background-repeat: no-repeat;
@@ -123,7 +158,7 @@ ul > li:before {
 
 .fit-image {
     width: 100%;
-    height: 700px;
+    height: 95%;
     display: inline-block;
     background-position: calc(50%);
     background-repeat: no-repeat;
@@ -151,7 +186,7 @@ ul > li:before {
 
 .half-image-cover {
     width: 50%;
-    height: 700px;
+    height: 95%;
     display: inline-block;
     background-position: calc(50%);
     background-repeat: no-repeat;
@@ -179,7 +214,7 @@ sup.superscript {
 
 .half-image-fit {
     width: 50%;
-    height: 700px;
+    height: 95%;
     display: inline-block;
     background-position: calc(50%);
     background-repeat: no-repeat;
